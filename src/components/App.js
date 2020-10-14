@@ -1,8 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { store } from '../redux/store';
-import { Provider } from 'react-redux';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 
@@ -11,7 +9,6 @@ import TodoForm from './TodoForm';
 function App(props) {
 
   return (
-    <Provider store={store}>
       <div className="container">
         
         <header>
@@ -29,8 +26,6 @@ function App(props) {
         <TodoList />
 
       </div>
-      
-    </Provider>
   )
 }
 

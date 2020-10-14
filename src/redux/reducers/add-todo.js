@@ -5,10 +5,7 @@ import {
 } from '../actions';
 
 const initialState = {
-    todos: [
-        { id: 101,name:'pp',complete:true },
-        { id: 1012,name:'sim',complete:true },
-    ]
+    todos: []
 }
 
 export const addTodoReducer = (state = initialState, action) => {

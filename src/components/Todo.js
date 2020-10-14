@@ -21,16 +21,6 @@ class Todo extends Component {
         this.editTodoData = React.createRef();
     }
 
-    componentDidMount() {
-        console.log(this.props)
-    }
-
-    shouldComponentUpdate() {return true;}
-
-    componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps, prevState)
-    }
-
     handleTodoClick = () => {
         this.props.markUnmarkTodo(this.props.todo.id)
     }
@@ -125,6 +115,12 @@ class Todo extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        todos: state.addTodo.todos
+    }
+};
  
 const mapDispatchToProps = dispatch => {
     return {
@@ -134,4 +130,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Todo);
+export default connect(mapStateToProps, mapDispatchToProps)(Todo);
